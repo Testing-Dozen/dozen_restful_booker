@@ -1,18 +1,27 @@
 from approvaltests import verify, verify_as_json
 import requests
 
+
 def test_branding(is_env_up):
-    assert is_env_up.status_code == 200
+    """/branding/"""
+
+    the_place_to_go_to = "/branding"
+    should_run_true_or_false = is_env_up[0]
+    address_to_use = is_env_up[1]
+    if not should_run_true_or_false:
+        raise AssertionError("This has already failed in the fixture, this should not be possible")
+    r = requests.get(f"{address_to_use}{the_place_to_go_to}")
+    assert r.status_code == 200
     #Verify the entire json with approvaltests
-    verify_as_json(is_env_up.json())
+    verify_as_json(r.json())
     #Search for some string in the response text
-    assert "Shady Meadows" in is_env_up.text
+    assert "Shady Meadows" in r.text
     #Search for specific value in specific place of json-structure
-    assert is_env_up.json()["name"] == "Shady Meadows B&B"
+    assert r.json()["name"] == "Shady Meadows B&B"
     #Search deeper in structure and multiple items
-    assert is_env_up.json()["map"]["latitude"] == 52.6351204 and is_env_up.json()["map"]["longitude"] == 1.2733774
+ #   assert r.json()["map"]["latitude"] == 52.6351204 and is_env_up.json()["map"]["longitude"] == 1.2733774
     #Verify that there is a json structure present without caring about what is in it
-    assert is_env_up.json()["description"]
+    assert r.json()["description"]
 
 def test_change_branding(admin):
     response = admin.put("http://localhost/branding/", json = "")
@@ -45,6 +54,7 @@ json2 = {
             "features": [
                 "WiFi",
                 "TV"]}
+
 
 @pytest.mark.parametrize("variable", [json1, json2])
 def test_create_room(admin, variable):

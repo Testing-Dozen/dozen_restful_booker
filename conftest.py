@@ -1,26 +1,31 @@
 import pytest
 import requests
 
-local_env = "http://localhost:3002"
+#local_env = "http://localhost:3002"
+local_env = "http://automationintesting.online"
 hosted_env = "http://automationintesting.online"
 
 
 @pytest.fixture(scope= "function")
-def branding_resp() -> requests.Response:
-    local = True
+def the_base_url():
+    local = False
+    print(local)
+    url_to_use: str = ""
     if local:
-        r = requests.get(local_env + "/branding/")
-    else:
-        r = requests.get(hosted_env + "/branding/")
-    yield r, local
-    print ("This is where we write teardown - things to do after test")
+        url_to_use = local_env
+    elif not local:
+        url_to_use = hosted_env
+    yield local, url_to_use
+    print("This is where we write teardown - things to do after test")
+
 
 @pytest.fixture(scope="function")
-def is_env_up(branding_resp):
-    if not branding_resp[1]:
-        raise Exception("Environment is not up")
-    else:
-        yield branding_resp[0]
+def is_env_up(the_base_url):
+    should_we = the_base_url[0]
+    if not should_we:
+        raise Exception("Environment is not up, we should not")
+    address_to_use = the_base_url[1]
+    yield should_we, address_to_use
 '''
     with pytest.raises(Exception):
         if not branding_resp[0].status_code == 200:
