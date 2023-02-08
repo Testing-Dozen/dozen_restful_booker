@@ -1,0 +1,1 @@
+"{\"roomid\":4,\"roomName\":\"999\",\"type\":\"Suite\",\"accessible\":false,\"image\":\"https://www.mwtestconsultancy.co.uk/img/room1.jpg\",\"description\":\"This is a lovely room\",\"features\":[\"WiFi\",\"TV\"],\"roomPrice\":878}"
