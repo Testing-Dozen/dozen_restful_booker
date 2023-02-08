@@ -21,3 +21,11 @@ def admin() -> requests.Session:
     {"username": "admin", "password": "password"})
     print(session)
     yield session
+
+from approvaltests import set_default_reporter
+from approvaltests.reporters import DiffReporter, quiet_reporter
+
+@pytest.fixture(scope="session", autouse=True)
+def reporter():
+    #set_default_reporter(DiffReporter())
+    set_default_reporter(quiet_reporter)
