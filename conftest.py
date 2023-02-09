@@ -1,37 +1,35 @@
 import pytest
 import requests
 
-#local_env = "http://localhost:3002"
-local_env = "http://automationintesting.online"
+local_env = "http://localhost:3002"
 hosted_env = "http://automationintesting.online"
 
 
 @pytest.fixture(scope= "function")
-def the_base_url():
-    local = False
-    print(local)
-    url_to_use: str = ""
+def branding_resp() -> requests.Response:
+    local = True
     if local:
-        url_to_use = local_env
-    elif not local:
-        url_to_use = hosted_env
-    yield local, url_to_use
+        r = requests.get(local_env + "/branding/")
+        assert r.ok, "The local environment seems to be down"
+    else:
+        r = requests.get(hosted_env + "/branding/")
+        assert r.ok, "The hosted environment seems to be unreachable"
+    yield r
     print("This is where we write teardown - things to do after test")
 
 
 @pytest.fixture(scope="function")
-def is_env_up(the_base_url):
-    should_we = the_base_url[0]
-    if not should_we:
-        raise Exception("Environment is not up, we should not")
-    address_to_use = the_base_url[1]
-    yield should_we, address_to_use
-'''
+def is_env_up(branding_resp) -> requests.Response:
+    '''
     with pytest.raises(Exception):
         if not branding_resp[0].status_code == 200:
             raise Exception("Environment is not up")
             '''
-            
+    # Todo: this check should be done already in test setup, where it checks the connection. Maybe through os? It
+    #  won't even send the request.
+    yield branding_resp
+
+
 @pytest.fixture(scope= "session")
 def admin() -> requests.Session:
     session = requests.Session()
