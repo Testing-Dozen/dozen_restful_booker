@@ -80,3 +80,9 @@ def test_put(admin):
 def test_get_rooms(admin):
     rooms = admin.get("http://localhost/room")
     verify_as_json(rooms.json())
+
+json4 = {"bookingdates":{"checkin":"","checkout":""},"depositpaid":False,"firstname":"","lastname":"","roomid":1,"email":"","phone":""}
+
+def test_booking_empty_fields():
+    response = requests.post("http://localhost/booking/", json = json4)
+    assert response.status_code == 400
