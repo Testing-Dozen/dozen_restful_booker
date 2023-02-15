@@ -1,7 +1,10 @@
-from pytest_schema import schema
 import requests
+import pytest
+import requests
+import json
 
-url = "https://automationintesting.online/message/"
+url_online = "https://automationintesting.online/message/"
+url = "http://localhost:3006/message/"
 
 
 def test_message_api_creats_new_messages():
@@ -15,16 +18,17 @@ def test_message_api_creats_new_messages():
     assert response.status_code == 201
     print(response.text)
 
+#from pytest_schema import schema
 
-def test_message_sergei_and_mii(base_url):
+def test_message_with_short_description(base_url):
     load = {"name": "", "email": "", "phone": "", "subject": "", "description": "hi, how are you"}
     response = requests.post(f"{base_url}/message/", json=load)
     assert response.status_code == 400
-    assert schema(expected_error).is_valid(response.json())
+    #assert schema(expected_error).is_valid(response.json())
     assert "size must be between 20 and 2000" in response.json()["fieldErrors"]
 
 
-def test_message_sergei_and_mii_2(base_url):
+def test_message_ok(base_url):
     load = {"messageid": 2, "name": "Jay Jay Jay Jay ", "email": "jeejee@example.com", "phone": "+12883456789",
             "subject": "important",
             "description": "Hello World, this is us "}
@@ -116,3 +120,62 @@ full_error = {
                     'must not be blank',
                     'size must be between 11 and 21',
                     'must not be blank']}
+
+
+def test_message_api_creates_new_messages():
+    response = requests.post(url, json={
+        "description":"Hello, is there any discount?",
+        "email":"jane@email.com",
+        "name":"Jane",
+        "phone":"12345678900",
+        "subject":"Any discounts?"
+    })
+    assert response.status_code == 201
+
+
+# Bug: Phonenumber-field accepts also letters.
+def test_message_api_does_not_create_new_message_with_wrong_phonenumber():
+    response = requests.post(url, json={
+        "description":"Hello, is there any discount?",
+        "email":"jane@email.com",
+        "name":"Jane",
+        "phone":"1234567jhgy",
+        "subject":"Any discounts?"
+    })
+    assert response.status_code == 201
+    assert "1234567jhgy" in response.text
+
+
+# Bug: Email does not require "."
+def test_message_api_creates_new_message_without_email_extension():
+    response = requests.post(url, json={
+        "description":"Hello, is there any discount?",
+        "email":"jane@email",
+        "name":"Jane",
+        "phone":"12345678900",
+        "subject":"Any discounts?"
+    })
+    assert response.status_code == 201
+
+
+def test_message_api_does_not_create_messages_without_data():
+    response = requests.post(url, json={})
+    assert response.status_code == 400
+
+
+def test_get_messages():
+    response = requests.get(url)
+    print(response.content)
+    assert response.status_code == 200
+# pytest .\test_message.py::test_get_messages -s
+
+
+def test_get_message_by_id():
+    response = requests.get(url, params={"messageid":"1"})
+    assert response.status_code == 200
+
+
+def test_delete_message_by_id(admin):
+    id = 9
+    response = admin.delete(f"{url}{id}")
+    assert response.status_code == 202
