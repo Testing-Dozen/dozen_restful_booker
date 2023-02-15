@@ -9,11 +9,11 @@ Testing of:
 
 **S** - **F** - *D* - **P** - **O** - *T*
 
-# Domain
+## Domain
 
 * booking breakfast and bed accommodation
 
-# Features
+## Features
 
 * contact details of location
 * self booking
@@ -22,11 +22,11 @@ Testing of:
 * an unresponsive map
 * admin functions
 
-# Structure
+## Structure
 
 * multiple views
 
-# Notes on Bugs
+## Notes on Bugs
 
 * calendar, we can book onli on 1 page
 * calendar, we can't cancel booking by clicking on the blue row
@@ -71,13 +71,12 @@ Testing of:
 * SQL injection, security issues?
 * When I update the webpage, there are some error messages for some milliseconds
 
+## APIs
 
-# APIs
-
-* Auth        http://localhost:3004/auth/swagger-ui/index.html
-* Branding    http://localhost:3002/branding/swagger-ui/index.html
-* Room        http://localhost:3001/room/swagger-ui/index.html
-* Assets      http://localhost:3003/assets/swagger-ui/index.html
-* Booking     http://localhost:3000/booking/swagger-ui/index.html
-* Report      http://localhost:3005/report/swagger-ui/index.html
-* Message     http://localhost:3006/message/swagger-ui/index.html
+* Auth        <http://localhost:3004/auth/swagger-ui/index.html>
+* Branding    <http://localhost:3002/branding/swagger-ui/index.html>
+* Room        <http://localhost:3001/room/swagger-ui/index.html>
+* Assets      <http://localhost:3003/assets/swagger-ui/index.html>
+* Booking     <http://localhost:3000/booking/swagger-ui/index.html>
+* Report      <http://localhost:3005/report/swagger-ui/index.html>
+* Message     <http://localhost:3006/message/swagger-ui/index.html>
