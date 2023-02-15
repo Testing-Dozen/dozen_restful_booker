@@ -1,6 +1,5 @@
 import requests
 import pytest
-import requests
 import json
 from pytest_schema import schema
 
@@ -25,7 +24,7 @@ def test_message_with_short_description(base_url):
     load = {"name": "", "email": "", "phone": "", "subject": "", "description": "hi, how are you"}
     response = requests.post(f"{base_url}/message/", json=load)
     assert response.status_code == 400
-    #assert schema(expected_error).is_valid(response.json())
+    assert schema(expected_error).is_valid(response.json())
     assert "size must be between 20 and 2000" in response.json()["fieldErrors"]
 
 
