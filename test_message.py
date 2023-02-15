@@ -162,7 +162,7 @@ def test_message_api_does_not_create_messages_without_data():
     response = requests.post(url, json={})
     assert response.status_code == 400
 
-
+# Bug: Getting unauthenticated messages should not be possible.
 def test_get_messages():
     response = requests.get(url)
     print(response.content)
