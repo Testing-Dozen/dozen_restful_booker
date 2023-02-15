@@ -2,3 +2,4 @@ requests
 pytest
 approvaltests
 pytest-approvaltests
+pytest-schema
