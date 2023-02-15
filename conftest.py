@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-local_env = "http://localhost:3000"
+local_env = "http://localhost:3002"
 hosted_env = "http://automationintesting.online"
 
 @pytest.fixture(scope="session")
