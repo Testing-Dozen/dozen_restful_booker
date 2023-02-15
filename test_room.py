@@ -41,7 +41,7 @@ def test_put_validation(admin):
     assert response.status_code == 400
 
 json3 = {
-            "roomName": "777",
+            "roomName": "666",
             "type": "Suite",
             "accessible": True,
             "description": "This is a lovely room",
