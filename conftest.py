@@ -1,8 +1,13 @@
 import pytest
 import requests
 
-local_env = "http://localhost:3002"
+local_env = "http://localhost:3000"
 hosted_env = "http://automationintesting.online"
+
+@pytest.fixture(scope="session")
+def base_url() -> str:
+    yield "http://localhost"
+
 
 @pytest.fixture(scope= "function")
 def branding_resp() -> requests.Response:
@@ -21,6 +26,7 @@ def admin() -> requests.Session:
     {"username": "admin", "password": "password"})
     print(session)
     yield session
+
 
 from approvaltests import set_default_reporter
 from approvaltests.reporters import DiffReporter, quiet_reporter
