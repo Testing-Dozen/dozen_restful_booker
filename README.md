@@ -76,7 +76,9 @@ Testing of:
 * Auth        <http://localhost:3004/auth/swagger-ui/index.html>
 * Branding    <http://localhost:3002/branding/swagger-ui/index.html>
 * Room        <http://localhost:3001/room/swagger-ui/index.html>
-* Assets      <http://localhost:3003/assets/swagger-ui/index.html>
+* Assets (*)  <http://localhost:3003/assets/swagger-ui/index.html>
 * Booking     <http://localhost:3000/booking/swagger-ui/index.html>
 * Report      <http://localhost:3005/report/swagger-ui/index.html>
 * Message     <http://localhost:3006/message/swagger-ui/index.html>
+* Health      <http://localhost:3003/actuator/health>
+* Logs        <http://localhost:3003/actuator/logfile>
