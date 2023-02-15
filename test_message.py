@@ -38,13 +38,20 @@ expected_error = {"error": str, "errorCode": int, "errorMessage": str,
 
 error_message_cleaned_to_dict_for_readability = {
     "errorMessage": {
-        "description": "[Size.message.description,Size.description,Size.java.lang.String,Size], default message [description],2000,20]; default message [size must be between 20 and 2000]",
-        "name": "[NotBlank.message.name,NotBlank.name,NotBlank.java.lang.String,NotBlank], default message [name]]; default message [must not be blank]",
-        "subject_1": "[NotBlank.message.subject,NotBlank.subject,NotBlank.java.lang.String,NotBlank], default message [subject]]; default message [must not be blank]",
-        "subject_2": "[Size.message.subject,Size.subject,Size.java.lang.String,Size], default message [subject],100,5]; default message [size must be between 5 and 100]",
-        "phone_1": "[NotBlank.message.phone,NotBlank.phone,NotBlank.java.lang.String,NotBlank],default message [phone]]; default message [must not be blank]",
-        "phone_2": "[Size.message.phone,Size.phone,Size.java.lang.String,Size], default message [phone],21,11]; default message [size must be between 11 and 21]",
-        "email": "[NotBlank.message.email,NotBlank.email,NotBlank.java.lang.String,NotBlank], default message [email]]; default message [must not be blank]"}
+        "description": "[Size.message.description,Size.description,Size.java.lang.String,Size], "
+                       "default message [description],2000,20]; default message [size must be between 20 and 2000]",
+        "name": "[NotBlank.message.name,NotBlank.name,NotBlank.java.lang.String,NotBlank], "
+                "default message [name]]; default message [must not be blank]",
+        "subject_1": "[NotBlank.message.subject,NotBlank.subject,NotBlank.java.lang.String,NotBlank], "
+                     "default message [subject]]; default message [must not be blank]",
+        "subject_2": "[Size.message.subject,Size.subject,Size.java.lang.String,Size], d"
+                     "efault message [subject],100,5]; default message [size must be between 5 and 100]",
+        "phone_1": "[NotBlank.message.phone,NotBlank.phone,NotBlank.java.lang.String,NotBlank],d"
+                   "default message [phone]]; default message [must not be blank]",
+        "phone_2": "[Size.message.phone,Size.phone,Size.java.lang.String,Size], "
+                   "default message [phone],21,11]; default message [size must be between 11 and 21]",
+        "email": "[NotBlank.message.email,NotBlank.email,NotBlank.java.lang.String,NotBlank], "
+                 "default message [email]]; default message [must not be blank]"}
 }
 
 full_error = {
