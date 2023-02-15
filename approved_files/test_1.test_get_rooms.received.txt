@@ -2,17 +2,16 @@
     "rooms": [
         {
             "accessible": true,
-            "description": "Aenean porttitor mauris sit amet lacinia molestie. In posuere accumsan aliquet. Maecenas sit amet nisl massa. Interdum et malesuada fames ac ante.",
+            "description": "This is a lovely room",
             "features": [
-                "TV",
                 "WiFi",
-                "Safe"
+                "TV"
             ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/testim/room2.jpg",
-            "roomName": "101",
-            "roomPrice": 100,
+            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
+            "roomName": "777",
+            "roomPrice": 878,
             "roomid": 1,
-            "type": "single"
+            "type": "Suite"
         },
         {
             "accessible": false,
@@ -28,7 +27,7 @@
             "type": "Suite"
         },
         {
-            "accessible": false,
+            "accessible": true,
             "description": "This is a lovely room",
             "features": [
                 "WiFi",
@@ -38,149 +37,6 @@
             "roomName": "999",
             "roomPrice": 878,
             "roomid": 3,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 4,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 5,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 6,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 7,
-            "type": "Suite"
-        },
-        {
-            "accessible": true,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 8,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 9,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 10,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 11,
-            "type": "Suite"
-        },
-        {
-            "accessible": false,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 12,
-            "type": "Suite"
-        },
-        {
-            "accessible": true,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 13,
-            "type": "Suite"
-        },
-        {
-            "accessible": true,
-            "description": "This is a lovely room",
-            "features": [
-                "WiFi",
-                "TV"
-            ],
-            "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
-            "roomName": "999",
-            "roomPrice": 878,
-            "roomid": 14,
             "type": "Suite"
         }
     ]
