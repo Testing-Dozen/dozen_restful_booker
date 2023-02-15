@@ -2,6 +2,8 @@ import requests
 import pytest
 import requests
 import json
+from pytest_schema import schema
+
 
 url_online = "https://automationintesting.online/message/"
 url = "http://localhost:3006/message/"
@@ -18,7 +20,6 @@ def test_message_api_creats_new_messages():
     assert response.status_code == 201
     print(response.text)
 
-#from pytest_schema import schema
 
 def test_message_with_short_description(base_url):
     load = {"name": "", "email": "", "phone": "", "subject": "", "description": "hi, how are you"}
